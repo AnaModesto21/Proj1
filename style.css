@@ -1,0 +1,9 @@
+canvas {
+  background-image: url("./images/5-building-on-fire-background-cartoon.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+#screen{
+    display: block;
+    margin: 0 auto;
+}
