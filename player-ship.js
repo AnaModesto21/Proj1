@@ -16,7 +16,7 @@ class PlayerShip extends Rectangle {
     this.onKeyUp = this.onKeyUp.bind(this);
     this.lastBullet = null;
   }
-
+//////
   start() {
     this.restart();
     this.health = PLAYER_MAX_HEALTH;

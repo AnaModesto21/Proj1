@@ -20,7 +20,7 @@ class Enemy extends Rectangle {
 
     // Attempt to advance the row.
     const newY = this.y + EnemyRowMargin;
-    const bound = canvasHeight - EnemyHeight * 5;
+    const bound = canvasHeight - EnemyHeight * 2;
     if (newY >= bound) {
       this.onReachedEnd();
     } else {

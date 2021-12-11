@@ -1,16 +1,17 @@
 const EnemyRowMargin = 18;
 const ColumnsNumber = 11;
 const RowsNumber = 5;
-const FireStartY = 150;
+const FireStartY = 100;
 const EnemyHeight = 20;
 const EnemyWidth = 30;
 const EnemyColumnMargin = 7;
-const FrequencyStart = 45;
+const FrequencyStart = 15;
 const FrequencyMin = 5;
 const FireShootProbability = 2;
 const FireShootProbabilityFrequency= 50;
 const FireWidth = (ColumnsNumber - 1) * EnemyColumnMargin + ColumnsNumber * EnemyWidth
 const FireStartX = (FireWidth - 2 * EnemyColumnMargin) / 4;
+
 
 class EnemyFleet {
   constructor(onNewBullet, onEnemyKilled) {
@@ -19,6 +20,7 @@ class EnemyFleet {
 
     this.onBumpedEdge = this.onBumpedEdge.bind(this);
     this.onReachedEnd = this.onReachedEnd.bind(this);
+    
   }
 
   start() {
@@ -31,6 +33,8 @@ class EnemyFleet {
 
     this.enemies = [];
 
+
+    
     // All enemies (living and dead) stored by position in grid
 
     this.enemiesByColRow = [];

@@ -90,7 +90,7 @@ class SpaceGame {
       this.barriers = this.barriers.filter(barrier => barrier.isAlive());
 
       // Filter bullets by living.
-      //this.filterBulletsByLiving();
+      this.filterBulletsByLiving();
 
       ticksLastTime = ticksSinceStart;
       if (!this.enemyFleet.hasConquered() && this.playerShip.isAlive()) {
