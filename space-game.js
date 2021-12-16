@@ -1,6 +1,6 @@
 const FPS = 85;
 const SECONDS_PER_TICK = 1 / FPS;
-
+let barrier1 = '';
 class SpaceGame {
   constructor(canvas, onGameOver) {
     this.onNewEnemyBullet = this.onNewEnemyBullet.bind(this);
@@ -19,6 +19,8 @@ class SpaceGame {
     this.barriers = this.constructBarriers();
     this.enemyBullets = [];
     this.scoreKeeper = new ScoreKeeper();
+
+    
 
     // Initialize objects.
     this.playerShip.start();
@@ -130,7 +132,8 @@ class SpaceGame {
     const BARRIER_MARGIN = 10;
     const NUMBER_BARRIERS = 4;
     const BARRIER_Y_POSITION = canvasHeight * 0.75;
-
+    barrier1 = new Image();
+    barrier1.src = './images/fire.png';
     const barriers = [];
 
     const maxWidth = canvasWidth - BARRIER_MARGIN * 2;
@@ -165,7 +168,7 @@ class ScoreKeeper {
   }
 
   render(ctx) {
-    ctx.fillStyle = 'blueviolet';
+    ctx.fillStyle = 'white';
     ctx.font = '20px Consolas, monospace';
     ctx.textAlign = 'right';
     ctx.fillText(`SCORE: ${this.score}`, X_POSITION, Y_POSITION);
@@ -191,7 +194,6 @@ class PlayerBullet extends Rectangle {
   }
 
   update(dt) {
-    console.log(this.alive);
     const yBound = 0;
     const newY = this.y + this.yVelocity;
 
@@ -202,8 +204,6 @@ class PlayerBullet extends Rectangle {
   }
 
   render(ctx) {
-    console.assert(this.alive);
-
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
   }

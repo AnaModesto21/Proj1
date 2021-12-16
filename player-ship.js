@@ -6,7 +6,7 @@ const PLAYER_SHIP_LEFT_BOUND = 0;
 const PLAYER_MAX_HEALTH = 3;
 
 class PlayerShip extends Rectangle {
-  constructor(onNewBullet) {
+  constructor(onNewBullet, img) {
     const startX = (canvasWidth - PLAYER_SHIP_WIDTH) / 2;
     const startY = canvasHeight - PLAYER_SHIP_HEIGHT * 1.5;
     super(startX, startY, PLAYER_SHIP_WIDTH, PLAYER_SHIP_HEIGHT)
@@ -15,8 +15,17 @@ class PlayerShip extends Rectangle {
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
     this.lastBullet = null;
+    this.img = new Image();
+    this.img.src = "./images/fireman.png";
+    this.fireImage = new Image();
+    this.fireImage.src = "./images/vidaverde.png";
   }
-//////
+
+  drawPlayer() {
+    //app.ctx.drawImage(this.img, this.x, this.y, 100, 100);
+    app.ctx.drawImage(this.img, 0, 0, 50, 50);
+  }
+  
   start() {
     this.restart();
     this.health = PLAYER_MAX_HEALTH;
@@ -34,7 +43,6 @@ class PlayerShip extends Rectangle {
     document.removeEventListener('keyup', this.onKeyUp);
     document.removeEventListener('keydown', this.onKeyDown);
   }
-
   update(dt) {
     const newX = Math.max(
       Math.min(this.x + this.xVelocity, PLAYER_SHIP_RIGHT_BOUND), PLAYER_SHIP_LEFT_BOUND);
@@ -68,7 +76,11 @@ class PlayerShip extends Rectangle {
     } else {
       ctx.fillStyle = 'red';
     }
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    ctx.fillRect(this.x +30, this.y -50, 10, 10);
+    
+   ctx.drawImage(this.img, this.x -10, this.y -50, 50, 75);
+    
+
   }
 
   isAlive() {
@@ -86,7 +98,7 @@ class PlayerShip extends Rectangle {
     this.onNewBullet(bullet);
   }
 
-  // Private
+
   onKeyDown(event) {
     const key = event.key;
     if (key === 'ArrowLeft') {

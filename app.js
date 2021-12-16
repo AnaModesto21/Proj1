@@ -2,7 +2,6 @@ class App {
   constructor() {
     this.gameOver = this.gameOver.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
-
     this.canvas = document.querySelector('#screen');
     this.canvas.width = canvasWidth;
     this.canvas.height = canvasHeight;
@@ -32,8 +31,6 @@ class App {
     textScreen.writeLine(`SCORE: ${score}`);
     textScreen.writeLine();
     textScreen.writeLine('Press ENTER to play again');
-    
-
     this.listenForStartGame();
   }
 

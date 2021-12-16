@@ -52,7 +52,11 @@ class Barrier extends Rectangle {
   //barrier color
 
   render(ctx) {
-    ctx.fillStyle = 'blueviolet';
+
+    ctx.fillStyle = 'darkred';
     ctx.fillRect(this.x, this.y, this.width, this.height);
+
+    
+
   }
 }
