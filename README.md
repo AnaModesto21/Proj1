@@ -23,3 +23,6 @@ https://anamodesto21.github.io/Proj1/
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/77633954/146639982-0235f3cc-a68b-454e-807f-7d9fa3a435c2.gif)
