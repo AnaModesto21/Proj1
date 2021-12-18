@@ -1,5 +1,5 @@
-const PLAYER_SHIP_HEIGHT = 20;
-const PLAYER_SHIP_WIDTH = 40;
+const PLAYER_SHIP_HEIGHT = 40;
+const PLAYER_SHIP_WIDTH = 30;
 const PLAYER_SHIP_UPDATE_PIXELS_PER_TICK = 4;
 const PLAYER_SHIP_RIGHT_BOUND = canvasWidth - PLAYER_SHIP_WIDTH;
 const PLAYER_SHIP_LEFT_BOUND = 0;
@@ -7,8 +7,8 @@ const PLAYER_MAX_HEALTH = 3;
 
 class PlayerShip extends Rectangle {
   constructor(onNewBullet, img) {
-    const startX = (canvasWidth - PLAYER_SHIP_WIDTH) / 2;
-    const startY = canvasHeight - PLAYER_SHIP_HEIGHT * 1.5;
+    const startX = (canvasWidth - PLAYER_SHIP_WIDTH) /2;
+    const startY = canvasHeight - PLAYER_SHIP_HEIGHT;
     super(startX, startY, PLAYER_SHIP_WIDTH, PLAYER_SHIP_HEIGHT)
 
     this.onNewBullet = onNewBullet;
@@ -16,14 +16,18 @@ class PlayerShip extends Rectangle {
     this.onKeyUp = this.onKeyUp.bind(this);
     this.lastBullet = null;
     this.img = new Image();
-    this.img.src = "./images/fireman.png";
-    this.fireImage = new Image();
-    this.fireImage.src = "./images/vidaverde.png";
+    this.img.src = "./images/lovepik-punching-muscle-santa-png-image_1330601.jpg_wh300.png";
+    this.deer1 = new Image();
+    this.deer1.src = "./images/1.png";
+    this.deer2 = new Image();
+    this.deer2.src = "./images/2.png";
+    this.deer3 = new Image();
+    this.deer3.src = "./images/3.png";
   }
 
   drawPlayer() {
     //app.ctx.drawImage(this.img, this.x, this.y, 100, 100);
-    app.ctx.drawImage(this.img, 0, 0, 50, 50);
+    app.ctx.drawImage(this.img, this.x, this.y, 100, 100);
   }
   
   start() {
@@ -70,15 +74,16 @@ class PlayerShip extends Rectangle {
 
   render(ctx) {
     if (this.health >= PLAYER_MAX_HEALTH) {
-      ctx.fillStyle = 'hotpink';
+      app.ctx.drawImage(this.deer1, 720, 520, 70, 70);
     } else if (this.health === 2) {
-      ctx.fillStyle = 'yellow';
+      app.ctx.drawImage(this.deer2, 720, 520, 70, 70);
     } else {
-      ctx.fillStyle = 'red';
+      app.ctx.drawImage(this.deer3, 720, 520, 70, 70);
     }
-    ctx.fillRect(this.x +30, this.y -50, 10, 10);
-    
-   ctx.drawImage(this.img, this.x -10, this.y -50, 50, 75);
+    //ctx.fillRect(this.x +30, this.y -50, 10, 10);
+   
+    //santa's img
+   ctx.drawImage(this.img, this.x -10, this.y -27, 70, 75);
     
 
   }
@@ -91,8 +96,8 @@ class PlayerShip extends Rectangle {
     if (this.lastBullet) {
       return;
     }
-    const bulletX = this.x + this.width / 2;
-    const bulletY = this.y + this.height / 2;
+    const bulletX = this.x + this.width + 13 ;
+    const bulletY = this.y + this.height - 30;
     const bullet = new PlayerBullet(bulletX, bulletY);
     this.lastBullet = bullet;
     this.onNewBullet(bullet);

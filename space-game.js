@@ -132,8 +132,6 @@ class SpaceGame {
     const BARRIER_MARGIN = 10;
     const NUMBER_BARRIERS = 4;
     const BARRIER_Y_POSITION = canvasHeight * 0.75;
-    barrier1 = new Image();
-    barrier1.src = './images/fire.png';
     const barriers = [];
 
     const maxWidth = canvasWidth - BARRIER_MARGIN * 2;

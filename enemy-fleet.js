@@ -1,9 +1,9 @@
 const EnemyRowMargin = 18;
 const ColumnsNumber = 11;
 const RowsNumber = 5;
-const FireStartY = 100;
-const EnemyHeight = 35;
-const EnemyWidth = 30;
+const FireStartY = 0;
+const EnemyHeight = 45;
+const EnemyWidth = 45;
 const EnemyColumnMargin = 7;
 const FrequencyStart = 15;
 const FrequencyMin = 5;
@@ -20,8 +20,6 @@ class EnemyFleet {
 
     this.onBumpedEdge = this.onBumpedEdge.bind(this);
     this.onReachedEnd = this.onReachedEnd.bind(this);
-    this.img = new Image();
-    this.img.src = "./images/fire-65.gif";
   }
 
   start() {

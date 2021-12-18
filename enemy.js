@@ -12,7 +12,7 @@ class Enemy extends Rectangle {
 
     this.alive = true;
     this.img = new Image();
-    this.img.src = "./images/41faeb4b7129b75f4883d75c72627835-fire-flame-clipart.png";
+    this.img.src = "./images/imageedit_4_2121429937.png";
     
   }
 

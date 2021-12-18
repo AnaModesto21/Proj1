@@ -1,12 +1,16 @@
 canvas {
-  background-image: url("./images/5-building-on-fire-background-cartoon.jpg");
+  background-image: url("./images/christmas-flat-cartoon-style-background-vector-28112091.jpg");
   background-size:cover;
   background-repeat: no-repeat;
+  
 }
 #screen{
     display: block;
     margin: 0 auto;
+    margin-top: 70px;
 }
 
-
+/* body{
+  background-image: url("./images/imgbin_christmas-frame-balls-mistletoe-png.png");
+} */
 

@@ -11,7 +11,7 @@ class App {
 
     //initial screen information
     const textScreen = new TextWriter(this.ctx);
-    textScreen.writeLine('LITTLE FIREFIGHTER');
+    textScreen.writeLine('CHRISTMAS INVASION');
     textScreen.writeLine('Press ENTER to start');
     textScreen.writeLine('                      ');
     textScreen.writeLine('ARROW LEFT AND RIGHT TO MOVE');
