@@ -1,5 +1,3 @@
-
-
 class App {
   constructor() {
     this.gameOver = this.gameOver.bind(this);
@@ -35,7 +33,7 @@ class App {
     textScreen.writeLine();
     textScreen.writeLine('Press ENTER to play again');
     this.listenForStartGame();
-    audio.stop();
+    this.audio.pause();
   }
 
   clearScreen() {
@@ -56,8 +54,9 @@ class App {
   startGame() {
     document.removeEventListener('keyup', this.onKeyUp);
     this.game.start(this.canvas);
-    let audio = new Audio("./sounds/A Christmas Rock Medley (mp3cut.net) (1).mp3");
-    audio.play();
+    //let audio = new Audio("./sounds/A Christmas Rock Medley (mp3cut.net) (1).mp3");
+    console.log("this.audio", this.audio)
+    this.audio.play();
 
   }
 }

@@ -20,7 +20,7 @@ class Enemy extends Rectangle {
   advanceY() {
 
     // Reverse direction.
-    this.xVelocity *= -1.02;
+    this.xVelocity *= -1;
 
     // Attempt to advance the row.
     const newY = this.y + EnemyRowMargin;
