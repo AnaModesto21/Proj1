@@ -14,7 +14,7 @@ Initially it was supposed to be a firefighter game, but given the time of the ye
 
 ## Challenges
 
-Organizing the code and making it work
+Organizing the code and making it work.
 
 ## License
 
