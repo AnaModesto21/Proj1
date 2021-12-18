@@ -1,3 +1,5 @@
+
+
 class App {
   constructor() {
     this.gameOver = this.gameOver.bind(this);
@@ -6,7 +8,7 @@ class App {
     this.canvas.width = canvasWidth;
     this.canvas.height = canvasHeight;
     this.ctx = this.canvas.getContext('2d');
-    let mySound;
+    this.audio = new Audio("./sounds/A Christmas Rock Medley (mp3cut.net) (1).mp3");
     this.game = new SpaceGame(this.canvas, this.gameOver);
 
     //initial screen information
@@ -21,6 +23,7 @@ class App {
     textScreen.writeLine('');
     textScreen.writeLine('You can get hit 3 times');
     this.listenForStartGame();
+
   }
 
 
@@ -32,6 +35,7 @@ class App {
     textScreen.writeLine();
     textScreen.writeLine('Press ENTER to play again');
     this.listenForStartGame();
+    audio.stop();
   }
 
   clearScreen() {
@@ -52,7 +56,9 @@ class App {
   startGame() {
     document.removeEventListener('keyup', this.onKeyUp);
     this.game.start(this.canvas);
-    mySound = new sound("./sounds/A Christmas Rock Medley.mp3")
+    let audio = new Audio("./sounds/A Christmas Rock Medley (mp3cut.net) (1).mp3");
+    audio.play();
+
   }
 }
 
