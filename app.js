@@ -6,7 +6,7 @@ class App {
     this.canvas.width = canvasWidth;
     this.canvas.height = canvasHeight;
     this.ctx = this.canvas.getContext('2d');
-
+    let mySound;
     this.game = new SpaceGame(this.canvas, this.gameOver);
 
     //initial screen information
@@ -52,6 +52,7 @@ class App {
   startGame() {
     document.removeEventListener('keyup', this.onKeyUp);
     this.game.start(this.canvas);
+    mySound = new sound("./sounds/A Christmas Rock Medley.mp3")
   }
 }
 
