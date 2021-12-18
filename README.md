@@ -2,7 +2,7 @@
 
 # Christmas Invasion
 
-My project is based on oldschool Space Invaders with a Christmas twist.
+My project is based on oldschool Space Invaders with a Christmas twist :christmas_tree: :gift: :alien:
 
 ## Introduction
 
