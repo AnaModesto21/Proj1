@@ -97,6 +97,7 @@ class PlayerShip extends Rectangle {
       return;
     }
     const bulletX = this.x + this.width + 13 ;
+    
     const bulletY = this.y + this.height - 30;
     const bullet = new PlayerBullet(bulletX, bulletY);
     this.lastBullet = bullet;
